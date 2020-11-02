@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Машина</title>
+</head>
+
+<body>
+<div class="container">
+
+    <h3>Машина</h3>
+    <hr>
+    <table class="table table-bordered table-sm table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Название</th>
+            <th>Бренд</th>
+            <th>Дата создания</th>
+            <th>Дата обновления</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.name}"/>
+            <td th:text="${car.brand}"/>
+            <td th:text="${#temporals.format(car.createdAt,'dd-MM-yyyy HH:mm')}"></td>
+            <td th:text="${#temporals.format(car.updatedAt,'dd-MM-yyyy HH:mm')}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
+
+
+

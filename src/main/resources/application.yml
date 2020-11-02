@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    platform: org.hibernate.dialect.PostgreSQLDialect
+    url: jdbc:postgresql://localhost:5432/dev_car
+    username: postgres
+    password: postgres
+    hikari:
+      schema: public
+    separator: ;
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  thymeleaf:
+    cache: false
