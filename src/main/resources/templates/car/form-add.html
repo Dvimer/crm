@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!--  meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet"
+          th:href="@{/css/demo.css}"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Обновление параметра</title>
+</head>
+
+<body>
+<div class="container">
+
+    <h3>Параметр</h3>
+    <hr>
+    <div class="btn-group mb-2" role="group" aria-label="Button group with nested dropdown">
+        <a th:href="@{/cars/list}"
+           class="btn btn-primary" role="button" aria-pressed="true">Назад</a>
+    </div>
+    <form action="#" th:action="@{/cars/save}"
+          th:object="${car}" method="POST">
+        <input type="hidden" th:field="*{id}"/>
+        <div class="input-group mb-3 row">
+            <div class="col-3">
+                <span class="input-group-text">Название</span>
+            </div>
+            <input type="text" th:field="*{name}" class="form-control col-5" placeholder="Название">
+        </div>
+        <div class="input-group mb-3 row">
+            <div class="col-3">
+                <span class="input-group-text">Стенд</span>
+            </div>
+            <input type="text" th:field="*{brand}" class="form-control col-5" placeholder="Бренд">
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+    <hr>
+
+</div>
+</body>
+
+</html>
